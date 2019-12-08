@@ -7,7 +7,8 @@ const Footer = () => {
   
   const handlePlaying = () => {
     if(!playing) {
-      setPlaying(true)
+     setPlaying(true)
+     
     }
   }
 

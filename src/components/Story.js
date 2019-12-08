@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 // import {Link} from 'react-router-dom'
 import {Image, Transition, Table, Progress } from 'semantic-ui-react'
-import profile from '../resources/img/ProfilePic.jpeg'
+import profile from '../resources/img/profile_pic.jpg'
 import styles from '../resources/styles/Story.module.scss'
 
 const Story = () => {
@@ -67,6 +67,30 @@ const Story = () => {
               </tr>
               <tr>
                 <td>
+                  Express
+                </td>
+                <td className={styles.progress} >
+                  <Progress percent={45} indicating />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  MongoDB
+                </td>
+                <td className={styles.progress} >
+                  <Progress percent={40} indicating />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Git
+                </td>
+                <td className={styles.progress} >
+                  <Progress percent={65} indicating />
+                </td>
+              </tr>
+              <tr>
+                <td>
                   HTML5
                 </td>
                 <td className={styles.progress} >
@@ -79,6 +103,22 @@ const Story = () => {
                 </td>
                 <td className={styles.progress} >
                   <Progress percent={68} indicating />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  UI Design
+                </td>
+                <td className={styles.progress} >
+                  <Progress percent={41} indicating />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  UX Development
+                </td>
+                <td className={styles.progress} >
+                  <Progress percent={58} indicating />
                 </td>
               </tr>
             </tbody>
