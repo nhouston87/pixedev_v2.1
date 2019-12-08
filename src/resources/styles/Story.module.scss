@@ -1,0 +1,54 @@
+@import './theme';
+
+// .wrapper {
+  
+// }
+
+.top {
+  padding: 7rem 1rem;
+  background: $logo-blue;
+  color: $white;
+}
+
+.h1, .h4 {
+  font-weight: 500;
+}
+
+.middle {
+  display: flex;
+  padding: 3rem;
+  background: $white;
+}
+
+.profile,
+.bio {
+  padding: 1em;
+}
+
+.bioHeader {
+  font-size: 2em;
+}
+
+.bioText {
+  font-size: 1.2em;
+}
+
+.bottom {
+  display: flex;
+  background: $white;
+}
+
+.spacer {
+  flex-basis: 28.5%;
+}
+
+.skills {
+  padding: 2rem;
+  background: $logo-blue;
+  color: $white;
+  flex-basis: 71.5%;
+}
+
+.progress {
+  width: 100%;
+}

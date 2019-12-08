@@ -1,0 +1,26 @@
+/* Primary Color themes */
+$logo-green: #38B047;
+$logo-blue: #333A6E;
+$complimentary: #336e67;
+$black-base: #191716;
+$black-gradient: #353535;
+$light-grey: #E0E2DB;
+$white: #FDFCF9;
+
+/* Font Family Themes */
+// @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pridi|Tomorrow&display=swap');
+$sans-serif: 'Tomorrow', sans-serif;
+$serif: 'Pridi', serif;
+// $sans-serif: 'M PLUS Rounded 1c', sans-serif;
+// $serif: 'Slabo 27px', serif;
+
+
+/* Buttons */
+@mixin btn-big {
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 50px; 
+  outline: none;
+  font-size: 2em;
+}
