@@ -1,8 +1,10 @@
 @import './theme';
 
-// .wrapper {
-  
-// }
+.wrapper {
+  margin: 0;
+  padding-bottom: 5rem;
+  background: $white;
+}
 
 .top {
   padding: 7rem 1rem;
@@ -35,6 +37,7 @@
 
 .bottom {
   display: flex;
+  flex-basis: 100%;
   background: $white;
 }
 
@@ -45,10 +48,69 @@
 .skills {
   padding: 2rem;
   background: $logo-blue;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   color: $white;
   flex-basis: 71.5%;
 }
 
+.tableStyle {
+  margin: 0;
+}
+
 .progress {
   width: 100%;
+}
+
+@media (max-width: 1450px){
+  .middle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile {
+    width: 30%;
+  }
+
+  .bottom {
+    justify-content: flex-end;
+  }
+
+  .spacer {
+    flex-basis: 23.5%;
+  }
+
+  .skills {
+    flex-basis: 76.5%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .spacer {
+    flex-basis: 15%;
+  }
+
+  .skills {
+    flex-basis: 85%;
+  }
+}
+
+@media (max-width: 450px) {
+  .top {
+    padding: 7rem 1rem 3rem 1rem;
+    background: $logo-blue;
+    color: $white;
+  }
+
+  .profile {
+    width: 75%;
+  }
+
+  .spacer {
+    flex-basis: 5%;
+  }
+
+  .skills {
+    flex-basis: 95%;
+  }
 }

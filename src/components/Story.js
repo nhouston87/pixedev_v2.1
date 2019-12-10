@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 // import {Link} from 'react-router-dom'
-import {Image, Transition, Table, Progress } from 'semantic-ui-react'
+import {Image, Transition, Progress } from 'semantic-ui-react'
 import profile from '../resources/img/profile_pic.jpg'
 import styles from '../resources/styles/Story.module.scss'
 
@@ -39,7 +39,7 @@ const Story = () => {
         <div className={styles.spacer} ></div>
         <div className={styles.skills} >
           <h1 className={styles.h1} >Current Skill Progress</h1>
-          <table className='ui celled collapsing very basic table inverted'>
+          <table className={`ui celled very basic table inverted ${styles.tableStyle}`} >
             <tbody>
               <tr>
                 <td>

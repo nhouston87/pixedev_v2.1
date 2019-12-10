@@ -1,30 +1,98 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import {Icon, Header, Modal} from 'semantic-ui-react'
+import {Icon, Modal} from 'semantic-ui-react'
+import BigBLite from '../games/BigBLite'
+import Rps from '../games/Rps'
 
 const Footer = () => {
+  // Handles if there is currently an active game session in the DOM
   const [playing, setPlaying] = useState(false)
+  // Handles Toggling of the modal
+  const [modal, setModal] = useState(false)
+  // Handles which game is currently active
+  const [game, setGame] = useState(null)
+  // Game data per game
+  const [bigB, setBigB] = useState({chap: 1, sub: 0, lvl: 1, exp: 0, atk: 10, def: 5, spec: 10, h: 100, s: 100, w: 'none'})
+  const [rps, setRps] = useState({you: 0, comp: 0, round: 1, youLast: '', compLast: ''})
   
-  const handlePlaying = () => {
+  const keepPlaying = () => {
     if(!playing) {
      setPlaying(true)
-     
+    }
+    setModal(false)
+  }
+
+  const handleModal = () => {
+    setModal(true);
+  }
+
+  const handleGame = (e) => {
+    setGame(e.target.value)
+  }
+
+  const computerPicks = () => {
+    const choice = Math.floor(Math.random() * 2) + 1
+    switch (choice) {
+      case 1:
+        setGame('Big B Lite')
+        break;
+      case 2:
+        setGame('Rock,Paper,Scissors')
+        break;
+      default:
+        setGame('I wasnt listening and didnt choose, click quit')
+        break;
     }
   }
 
+  const quitGame = () => {
+    setGame(null)
+  }
+
+  const loadGame = () => {
+    switch (game) {
+      case 'Big B Lite':
+        return <BigBLite player={bigB} changePlayer={setBigB} />
+      case 'Rock,Paper,Scissors':
+        return <Rps data={rps} changeData={setRps} />
+      default:
+        return 'Could not load game'
+    }
+  }
+
+  const GameList = () => (
+    <div className='game-list'>
+      <h4>Which game should we play?</h4>
+      <div>
+        <button className="game-btn" onClick={handleGame} value='Big B Lite'>Big B Lite</button>
+        <button className="game-btn" onClick={handleGame} value='Rock,Paper,Scissors'>Rock,Paper,Scissors</button>
+        <button className="game-btn" onClick={computerPicks}>You pick for me</button>
+      </div>
+    </div>
+  )
+
+  const CurrentGame = () => (
+    <div className="current-game actions">
+      <h4>Playing: {game}</h4>
+      <div>{loadGame()}</div>
+      <button className='game-btn button' onClick={quitGame} >Quit</button>
+    </div>
+  )
+
   const GameModal = () => (
-    <Modal trigger={<Link to="#" className="link" onClick={handlePlaying}>
-      {!playing ? 'Want to play a game?' : 'Let\'s keep playing!'}
-    </Link>} centered={false}>
-      <Modal.Header>Lets play!</Modal.Header>
+    <Modal 
+      closeIcon 
+      open={modal}
+      onClose={keepPlaying} 
+      trigger={
+        <Link to="#" className="link" onClick={handleModal} >
+          {!playing ? 'Want to play a game?' : 'Let\'s keep playing!'}
+        </Link>
+      } centered={false}>
+      <Modal.Header>{!playing ? 'Lets play!' : 'So you\'re back for more...'}</Modal.Header>
       <Modal.Content>
         <Modal.Description>
-          <Header>Default Profile Image</Header>
-          <p>
-            We've found the following gravatar image associated with your e-mail
-            address.
-          </p>
-          <p>Is it okay to use this photo?</p>
+          {game === null ? <GameList /> : <CurrentGame /> }
         </Modal.Description>
       </Modal.Content>
     </Modal>

@@ -1,0 +1,40 @@
+@import '../theme';
+
+.container {
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.end {
+  justify-content: flex-end;
+}
+
+.start {
+  justify-content: flex-start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.stats {
+  margin-right: 8px;
+}
+
+.btn {
+  border: none;
+  background: $black-base;
+  color: $white;
+}
+
+.gameplay {
+  padding: 1em;
+}

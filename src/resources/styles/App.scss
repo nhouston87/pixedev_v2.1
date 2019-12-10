@@ -172,3 +172,27 @@ p, input, small {
     color: $logo-green;
   }
 }
+
+.game-list,
+.current-game {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-list div {
+  display: flex;
+}
+
+.game-btn {
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  background: $black-base;
+  color: $white;
+  border: none;
+  border-radius: 15px;
+
+  &:hover {
+    color: $logo-green;
+    cursor: pointer;
+  }
+}
